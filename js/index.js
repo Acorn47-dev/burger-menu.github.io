@@ -20,17 +20,16 @@ var isMobile = {
     },
     any: function () {
         return (
-            isMobile.Android()
-            || isMobile.BlackBerry()
-            || isMobile.iOS()
-            || isMobile.Opera()
-            || isMobile.Windows()
+            isMobile.Android() ||
+            isMobile.BlackBerry() ||
+            isMobile.iOS() ||
+            isMobile.Opera() ||
+            isMobile.Windows()
         );
     }
 };
 if (isMobile.any()) {
     document.body.classList.add('_touch');
-   
     if (menuarrows.length > 0) {
         for (let index = 0; index < menuarrows.length; index++) {
             const menuarrow = menuarrows[index];
@@ -42,14 +41,11 @@ if (isMobile.any()) {
 } else {
     document.body.classList.add('_pc');
 }
-
-
-
-
 if (menuLinks.length > 0) {
     menuLinks.forEach(menuLink => {
         menuLink.addEventListener("click", onMenuLinkClick);
     });
+
     function onMenuLinkClick(e) {
         const menuLink = e.target;
         if (iconmenu.classList.contains('_active')) {
@@ -68,10 +64,7 @@ if (menuLinks.length > 0) {
         }
     }
 }
-
-
 if (iconmenu) {
-   
     iconmenu.addEventListener('click', function (e) {
         document.body.classList.toggle('_lock');
         iconmenu.classList.toggle('_active');
