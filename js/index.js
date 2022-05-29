@@ -59,13 +59,12 @@ if (menuLinks.length > 0) {
         }
         if (menuLink.dataset.goto && document.querySelector(menuLink.dataset.goto)) {
             const gotoblock = document.querySelector(menuLink.dataset.goto);
-            const gotoblockvalue = gotoblock.getBoundingClientRect().top + pageYOffset - document.querySelector('header').offsetHeight;
+            const gotoblockvalue = gotoblock.getBoundingClientRect().top + scrollY - document.querySelector('header').offsetHeight;
             window.scrollTo({
                 top: gotoblockvalue,
-                left: 0,
-                behavior: 'smooth'
+                behavior: "smooth"
             });
-            e.parentDefult();
+            e.preventDefault();
         }
     }
 }
